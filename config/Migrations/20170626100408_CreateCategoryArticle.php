@@ -1,7 +1,7 @@
 <?php
 use Migrations\AbstractMigration;
 
-class CreateArticleTag extends AbstractMigration
+class CreateCategoryArticle extends AbstractMigration
 {
     /**
      * Change Method.
@@ -12,13 +12,13 @@ class CreateArticleTag extends AbstractMigration
      */
     public function change()
     {
-        $table = $this->table('article_tag');
-        $table->addColumn('article_id', 'integer', [
+        $table = $this->table('category_article');
+        $table->addColumn('category_id', 'integer', [
             'default' => null,
             'limit' => 11,
             'null' => false,
         ]);
-        $table->addColumn('tag_id', 'integer', [
+        $table->addColumn('article_id', 'integer', [
             'default' => null,
             'limit' => 11,
             'null' => false,

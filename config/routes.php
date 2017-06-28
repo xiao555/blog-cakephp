@@ -49,7 +49,9 @@ Router::scope('/', function (RouteBuilder $routes) {
      * its action called 'display', and we pass a param to select the view file
      * to use (in this case, src/Template/Pages/home.ctp)...
      */
-    $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+    $routes->connect('/', ['controller' => 'Pages', 'action' => 'home']);
+    $routes->connect('/admin', ['controller' => 'Admin', 'action' => 'index']);
+    $routes->connect('/logout', ['controller' => 'Users', 'action' => 'logout']);
 
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
@@ -72,6 +74,14 @@ Router::scope('/', function (RouteBuilder $routes) {
      * You can remove these routes once you've connected the
      * routes you want in your application.
      */
+    $routes->fallbacks(DashedRoute::class);
+});
+
+Router::prefix('admin', function($routes) {
+    // Prefixes are mapped to sub-namespaces in your application’s Controller namespace.
+    // Using our users example, accessing the URL /admin/users/edit/5 would call the edit()
+    // method of our src/Controller/Admin/UsersController.php
+    $routes->redirect('/logout', '/logout', ['status' => 302]);
     $routes->fallbacks(DashedRoute::class);
 });
 

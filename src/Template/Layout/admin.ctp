@@ -39,23 +39,24 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->fetch('script') ?>
 </head>
 <body>
-    <?= $this->Flash->render() ?>
-    <div class="container main-container">
-        <header class="header">
-            <?php
-                echo '<a href="/admin">Admin</a>';
-            ?>
-        </header>
+<?= $this->Flash->render() ?>
+<div class="container main-container">
+    <header class="header">
+        <?php
+            echo '<a href="/">Blog</a>';
+            echo '<a href="/logout">Logout</a>';
+        ?>
+    </header>
 
-        <main>
-            <section class="content <?php echo $this->request->params['controller']; echo '-'; echo  $this->request->params['action']?>">
-                <?= $this->fetch('content') ?>
-            </section>
-        </main>
+    <main>
+        <section class="content <?php echo $this->request->params['controller']; echo '-'; echo  $this->request->params['action']?>">
+            <?= $this->fetch('content') ?>
+        </section>
+    </main>
 
-        <footer class="footer">
-            <p class="text-center">&copy; Copyright 2014 - <?php echo date("Y") ?>.</p>
-        </footer>
-    </div>
+    <footer class="footer">
+        <p class="text-center">&copy; Copyright 2014 - <?php echo date("Y") ?>.</p>
+    </footer>
+</div>
 </body>
 </html>

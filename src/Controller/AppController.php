@@ -50,6 +50,25 @@ class AppController extends Controller
          */
         //$this->loadComponent('Security');
         //$this->loadComponent('Csrf');
+
+        //Users
+        $this->loadComponent('Auth', [
+            'loginRedirect' => [
+                'controller' => 'Admin',
+                'action' => 'index'
+            ],
+            'logoutRedirect' => [
+                'controller' => 'Users',
+                'action' => 'login'
+            ]
+        ]);
+        $this->Auth->allow(['display']);
+
+        $current_user = $this->Auth->user();
+        $this->set(compact('current_user'));
+
+        //Layout
+//        $this->viewBuilder()->layout('cakeblog');
     }
 
     /**

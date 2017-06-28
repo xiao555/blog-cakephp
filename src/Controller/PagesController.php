@@ -66,4 +66,23 @@ class PagesController extends AppController
             throw new NotFoundException();
         }
     }
+
+    public function home() {
+        $this->loadModel('Articles');
+        $this->paginate = [
+            'contain' => ['categories'],
+            'limit' => 10,
+            'order' => [
+                'Articles.created' => 'desc'
+            ]
+        ];
+
+        $articles = $this->paginate($this->Articles);
+        $this->set(compact('articles'));
+
+        $this->loadModel('Categories');
+        $categories = $this->Categories->find('all');
+        $this->set(compact('categories'));
+
+    }
 }
