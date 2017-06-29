@@ -5,3 +5,4 @@ sleep 1
 bin/cake bake migration CreateCategoryArticle article_id:integer category_id:integer
 sleep 1
 bin/cake bake migration CreateUsers username:string password:string admin:integer email:string created modified
+sleep 1

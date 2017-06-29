@@ -62,10 +62,10 @@ class AppController extends Controller
                 'action' => 'login'
             ]
         ]);
-        $this->Auth->allow(['display']);
+        $this->Auth->allow(['home']);
 
-        $current_user = $this->Auth->user();
-        $this->set(compact('current_user'));
+//        $current_user = $this->Auth->user();
+//        $this->set(compact('current_user'));
 
         //Layout
 //        $this->viewBuilder()->layout('cakeblog');

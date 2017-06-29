@@ -1,13 +1,13 @@
 <?php
 namespace App\Controller\Admin;
 
-use Cake\Controller\Controller;
+use App\Controller\AdminController;
 use Cake\Event\Event;
 
 /**
  *
  */
-class AppController extends Controller {
+class AppController extends AdminController {
 
     public function beforeFilter(Event $event)
     {
@@ -24,6 +24,8 @@ class AppController extends Controller {
 
         $this->loadComponent('Auth');
         $this->set('current_user', $this->Auth->user());
+
+
         $this->viewBuilder()->layout('admin');
     }
 }

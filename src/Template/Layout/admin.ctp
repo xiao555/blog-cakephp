@@ -31,32 +31,63 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </title>
     <?= $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css('base.css') ?>
-    <?= $this->Html->css('blog.css') ?>
+    <!-- Bootstrap -->
+    <?= $this->Html->css('/resources/bootstrap/css/bootstrap.min.css'); ?>
+
+    <!-- Custom-->
+    <?= $this->Html->css('admin.css') ?>
+
+    <!-- Jquery -->
+    <?= $this->Html->script('/resources/jquery/jquery.js'); ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
 <body>
-<?= $this->Flash->render() ?>
-<div class="container main-container">
-    <header class="header">
-        <?php
-            echo '<a href="/">Blog</a>';
-            echo '<a href="/logout">Logout</a>';
-        ?>
-    </header>
-
-    <main>
-        <section class="content <?php echo $this->request->params['controller']; echo '-'; echo  $this->request->params['action']?>">
-            <?= $this->fetch('content') ?>
-        </section>
+    <?= $this->Flash->render() ?>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/admin">Admin</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/">Visit Site</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+                <ul class="nav nav-sidebar">
+                    <?php foreach($pages as $page) { ?>
+                        <li <?php nav_active_array($page[2]) ?>><a href="<?php echo $page[1]; ?>"><?php echo $page[3];?><?php echo $page[0]; ?></a></li>
+                    <?php } ?>
+                </ul>
+                <footer>
+                    <p class="text-center">
+                        &copy; Copyright 2016 - <?php echo date("Y"); ?>.
+                        <br />
+                        <?php echo SITE_TITLE; ?> is powered by <a href="https://cakephp.org/" target="_blank">CakePHP</a>
+                    </p>
+                </footer>
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                <?= $this->fetch('content') ?>
+            </div>
+        </div>
     </main>
-
-    <footer class="footer">
-        <p class="text-center">&copy; Copyright 2014 - <?php echo date("Y") ?>.</p>
-    </footer>
-</div>
+    <!-- Bootstrap -->
+    <?= $this->Html->script('/resources/bootstrap/js/bootstrap.min.js'); ?>
 </body>
 </html>
