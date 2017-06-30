@@ -67,7 +67,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         </div>
     </nav>
     <main class="container-fluid">
-        <div class="row">
+        <div class="row clearfix">
             <div class="col-sm-3 col-md-2 sidebar">
                 <ul class="nav nav-sidebar">
                     <?php foreach($pages as $page) { ?>
