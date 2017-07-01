@@ -36,3 +36,7 @@ And I use [Bootstrap](http://getbootstrap.com/) to create my theme.
 #### 2017.6.30
 
 今天只做了一点微小的工作...
+
+#### 2017.7.2
+
+基本的blog功能完成，包含posts，categories，单独一个admin功能，ui比较粗糙，总之，完结撒花，准备后天的考试了，开始预习2333

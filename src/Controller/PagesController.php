@@ -77,12 +77,29 @@ class PagesController extends AppController
             ]
         ];
 
-        $articles = $this->paginate($this->Articles);
+        $articles = $this->paginate($this->Articles->find('all')->where(['status' => 1]));
         $this->set(compact('articles'));
 
         $this->loadModel('Categories');
         $categories = $this->Categories->find('all');
         $this->set(compact('categories'));
 
+    }
+
+    public function view($slug = NULL) {
+        $this->loadModel('Articles');
+        $article = $this->Articles->find('all')->where(['Articles.slug' => $slug, 'status' => 1])->contain(['categories'])->first();
+        if(!empty($article)) {
+            $this->loadModel('category_article');
+            $categorie_id = $this->category_article->find('all')->where(['article_id' => $article->id])->first()->category_id;
+            $this->loadModel('Categories');
+            $category = $this->Categories->find('all')->where(['id' => $categorie_id])->first();
+            $this->set(compact('category'));
+            $this->set('title_of_layout', $article->title);
+            $this->set(compact('article'));
+        } else {
+            $this->viewBuilder()->templatePath('Layout/');
+            $this->render('404');
+        }
     }
 }

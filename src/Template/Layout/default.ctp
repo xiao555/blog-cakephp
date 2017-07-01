@@ -31,8 +31,14 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </title>
     <?= $this->Html->meta('icon') ?>
 
+    <!-- Bootstrap -->
+    <?= $this->Html->css('/resources/bootstrap/css/bootstrap.min.css'); ?>
+
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('blog.css') ?>
+
+    <!-- Jquery -->
+    <?= $this->Html->script('/resources/jquery/jquery.js'); ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
@@ -42,9 +48,12 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Flash->render() ?>
     <div class="container main-container">
         <header class="header">
-            <?php
-                echo '<a href="/admin">Admin</a>';
-            ?>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><?php echo '<a href="/">Home</a>'; ?></li>
+                    <li><?php echo '<a href="/admin">Admin</a>'; ?></li>
+                </ul>
+            </div>
         </header>
 
         <main>
@@ -57,5 +66,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <p class="text-center">&copy; Copyright 2014 - <?php echo date("Y") ?>.</p>
         </footer>
     </div>
+    <!-- Bootstrap -->
+    <?= $this->Html->script('/resources/bootstrap/js/bootstrap.min.js'); ?>
 </body>
 </html>

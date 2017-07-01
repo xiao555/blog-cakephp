@@ -23,7 +23,7 @@ class CategoriesController extends AppController {
     }
 
     public function add() {
-        $this->set('title_for_layout', 'Category : Add');
+        $this->set('title_of_layout', 'Category : Add');
 
         $this->loadModel('Categories');
         $category = $this->Categories->newEntity($this->request->data);
@@ -54,6 +54,8 @@ class CategoriesController extends AppController {
                 $this->redirect(['action' => 'add']);
             }
 
+            $category->slug = Text::slug(strtolower($this->request->data('name')));
+
             //Save
             if ($this->Categories->save($category)) {
                 $this->Flash->set('The category has been saved.', [
@@ -64,12 +66,6 @@ class CategoriesController extends AppController {
                 );
                 $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->set('Unable to add category.',
-                    ['element' => 'alert-box',
-                        'params' => [
-                            'class' => 'danger'
-                        ]]
-                );
                 $this->Flash->set('Unable to add category.', [
                         'element' => 'error',
                         'params' => [
@@ -83,9 +79,75 @@ class CategoriesController extends AppController {
 
     public function edit($id = NULL) {
 
+        $this->loadModel('Categories');
+        $category = $this->Categories->get($id);
+        $this->set('title_of_layout', 'Category : '.$category->name);
+        if (empty($category)) {
+            throw new NotFoundException('Could not find that category.');
+        } else {
+            $this->set(compact('category'));
+        }
+
+        if ($this->request->is(['post', 'put'])) {
+            //Validation
+            $validator = new Validator();
+            $validator
+                ->requirePresence('name')
+                ->notEmpty('name', 'A name is required.');
+            $errors_array = $validator->errors($this->request->data);
+            $error_msg = [];
+            foreach($errors_array as $errors) {
+                if(is_array($errors)) {
+                    foreach($errors as $error) {
+                        $error_msg[] = $error;
+                    }
+                } else {
+                    $error_msg[] = $errors;
+                }
+            }
+            if(!empty($error_msg)) {
+                $this->Flash->set('Please fix the following error(s): '.implode('\n \r', $error_msg), [
+                        'element' => 'error',
+                        'params' => [
+                            'class' => 'danger'
+                        ]]
+                );
+                $this->redirect(['action' => 'edit', $id]);
+            }
+
+            $category->slug = Text::slug(strtolower($this->request->data('name')));
+
+            //Save
+            $this->Categories->patchEntity($category, $this->request->data);
+            if ($this->Categories->save($category)) {
+                $this->Flash->set('The category has been updated.', [
+                        'element' => 'success',
+                        'params' => [
+                            'class' => 'success'
+                        ]]
+                );
+                $this->redirect(['action' => 'index']);
+            } else {
+                $this->Flash->set('Unable to update category.', [
+                        'element' => 'error',
+                        'params' => [
+                            'class' => 'danger'
+                        ]]
+                );
+            }
+        }
     }
 
     public function delete($id = NULL) {
-
+        $this->loadModel('Categories');
+        $category = $this->Categories->get($id);
+        $this->Categories->delete($category);
+        $this->Flash->set('The category '.$category->title.' has been deleted.', [
+                'element' => 'success',
+                'params' => [
+                    'class' => 'success'
+                ]]
+        );
+        return $this->redirect(['action' => 'index']);
     }
 }
