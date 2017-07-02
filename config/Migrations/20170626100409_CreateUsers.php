@@ -55,7 +55,7 @@ class CreateUsers extends AbstractMigration
       $user->set('username', 'admin');
       $user->set('password', (new DefaultPasswordHasher)->hash('admin'));
       $user->set('admin', '1');
-      $user->set('email', '1335497539@qq.com');
+      $user->set('email', 'example@some.com');
       $user->set('created', date('Y-m-d H:i:s'));
       $usersTable->save($user);
     }

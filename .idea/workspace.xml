@@ -2,27 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c182d95a-a38c-4dca-ba57-5c290d423990" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Model/Table/CategoriesTable.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Template/Admin/Articles/add.ctp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Template/Admin/Articles/edit.ctp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Template/Admin/Categories/edit.ctp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Template/Category/index.ctp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Template/Layout/404.ctp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Template/Pages/view.ctp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/Migrations/schema-dump-default.lock" afterPath="$PROJECT_DIR$/config/Migrations/schema-dump-default.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/Migrations/20170626100407_CreateCategories.php" afterPath="$PROJECT_DIR$/config/Migrations/20170626100407_CreateCategories.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.php" afterPath="$PROJECT_DIR$/config/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/Admin/ArticlesController.php" afterPath="$PROJECT_DIR$/src/Controller/Admin/ArticlesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/Admin/CategoriesController.php" afterPath="$PROJECT_DIR$/src/Controller/Admin/CategoriesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/Admin/UsersController.php" afterPath="$PROJECT_DIR$/src/Controller/Admin/UsersController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/PagesController.php" afterPath="$PROJECT_DIR$/src/Controller/PagesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Admin/Articles/index.ctp" afterPath="$PROJECT_DIR$/src/Template/Admin/Articles/index.ctp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Admin/Users/index.ctp" afterPath="$PROJECT_DIR$/src/Template/Admin/Users/index.ctp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Layout/default.ctp" afterPath="$PROJECT_DIR$/src/Template/Layout/default.ctp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Template/Pages/home.ctp" afterPath="$PROJECT_DIR$/src/Template/Pages/home.ctp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/Migrations/20170626100409_CreateUsers.php" afterPath="$PROJECT_DIR$/config/Migrations/20170626100409_CreateUsers.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,16 +29,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="default.ctp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Template/Layout/default.ctp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="53" column="24" lean-forward="false" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CategoryController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/CategoryController.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -71,11 +43,21 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="523">
-                <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+              <first_editor relative-caret-position="272">
+                <caret line="16" column="44" lean-forward="true" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
                 <folding />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="20170626100409_CreateUsers.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/Migrations/20170626100409_CreateUsers.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="50" column="30" lean-forward="false" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="30" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -197,6 +179,7 @@
         <option value="$PROJECT_DIR$/src/Controller/PagesController.php" />
         <option value="$PROJECT_DIR$/src/Template/Pages/home.ctp" />
         <option value="$PROJECT_DIR$/src/Controller/CategoryController.php" />
+        <option value="$PROJECT_DIR$/config/Migrations/20170626100409_CreateUsers.php" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -756,12 +739,12 @@
       <updated>1498464761698</updated>
       <workItem from="1498464763995" duration="61000" />
       <workItem from="1498464840600" duration="637000" />
-      <workItem from="1498486012670" duration="46357000" />
+      <workItem from="1498486012670" duration="48458000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47055000" />
+    <option name="totallyTimeSpent" value="49156000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1008,14 +991,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/Migrations/20170626100409_CreateUsers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="28" column="27" lean-forward="true" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Template/Admin/Articles/add.ctp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -1217,11 +1192,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/Migrations/20170626100409_CreateUsers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="50" column="30" lean-forward="false" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="523">
-            <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <first_editor relative-caret-position="272">
+            <caret line="16" column="44" lean-forward="true" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
             <folding />
           </first_editor>
           <second_editor />

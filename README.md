@@ -4,6 +4,25 @@ This is a blogging web applications written in PHP 7.1.5 with [CakePHP](http://c
 
 But it has not yet been completed, I will finish it in the next few weeks.
 
+### Usage
+
+require: PHP, Mysql, Composer
+
+1. `git clone https://github.com/xiao555/blog-cakephp.git && cd blog-cakephp`
+2. `composer update`
+3. Create MySQL database.
+4. configure the following files in `config/`: `app.php`,`blog.config.php`.
+5. configure `config/Migrations/*CreateUsers.php` to create admin in function `init_admin`.
+6. Run migrations by running `bin/cake migrations migrate`.
+7. Mark the migration completed by running `bin/cake migrations mark_migrated`.
+8. Now run `bin/cake` to start server. Running in `http://localhost:8765/`. If you want another port, just run `bin/cake -p [someport]`.
+
+### TODO
+
+1. Optimize the code.
+2. Develop a set of front-end frame
+
+
 ### Log
 
 #### 2017.6.26
